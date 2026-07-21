@@ -66,7 +66,7 @@ nav {
 }
 .heroButton {
     background: #2463eb;
-    color: #fff;
+    color: #ffffff;
     width: 140px;
     padding: 12px 0;
     outline: none;
@@ -195,12 +195,12 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    padding: 0 15px; /* Mobil ekranlarda kənarlardan boşluq üçün */
+    padding: 0 15px; /
 }
 .FromContainer {
     background: #fff;
     width: 100%;
-    max-width: 420px; /* Böyük ekranlarda 420px saxlanılır, kiçiklərdə kiçilir */
+    max-width: 420px; 
     margin-top: 30px;
     display: flex;
     flex-direction: column;
