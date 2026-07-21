@@ -189,6 +189,80 @@ main {
     text-decoration: none;
     font-size: 1.2em;
 }
+.Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0 15px; /* Mobil ekranlarda kənarlardan boşluq üçün */
+}
+.FromContainer {
+    background: #fff;
+    width: 100%;
+    max-width: 420px; /* Böyük ekranlarda 420px saxlanılır, kiçiklərdə kiçilir */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    gap: 12px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(172, 166, 166);
+}
+.FromContainer > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.FromContainer p {
+    width: 100%;
+    max-width: 380px;
+}
+input {
+    width: 100%;
+    max-width: 380px;
+    height: 42px;
+    padding: 0 0 0 8px;
+    margin-top: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+textarea {
+    width: 100%;
+    max-width: 380px;
+    height: 100px;
+    margin-top: 5px;
+    padding: 5px 0 0 8px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.FormButton {
+    background: #2463eb;
+    width: 100%;
+    max-width: 380px;
+    height: 42px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.FormButton:hover {
+    background: #1d4ed8;
+}
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 @media screen and (min-width: 768px) {
     .menu {
         display: none !important;
