@@ -12,12 +12,19 @@
         <nav>
             <h2 class="logo">NovaTech</h2>
             <ul class="siyahi">
-                <li><a href="">Haqqımızda</a></li>
-                <li><a href="">Qalereya</a></li>
+                <li><a href="#haqqimizda">Haqqımızda</a></li>
+                <li><a href="#qalereya">Qalereya</a></li>
                 <li><a href="">Əlaqə</a></li>
             </ul>
-            <i class="fa-solid fa-bars-staggered menu"></i>
+            <i onclick="OpenMenu()" id="mark" class="fa-solid fa-bars-staggered menu"></i>
         </nav>
+        <div id="MobilMenubar"  >
+              <ul class="mobilSiyahi">
+                <li><a href="#haqqimizda">Haqqımızda</a></li>
+                <li><a href="#qalereya">Qalereya</a></li>
+                <li><a href="">Əlaqə</a></li>
+            </ul>
+        </div>
     </header>
     <main>
         <!-- Hero -->
@@ -27,8 +34,8 @@
             <button class="heroButton">Bizimlə Əlaqə</button>
         </section>
         <!-- Haqqimizda -->
-        <section>
-            <h2 class="basliq">Haqqımızda</h2>
+        <section >
+            <h2 id="haqqimizda" class="basliq">Haqqımızda</h2>
             <div class="haqqimizda">
                <div class="basliqlar">
                  <div class="hisse1">
@@ -53,7 +60,7 @@
             </div>
         </section>
         <!-- Qalereya -->
-         <section>
+         <section id="qalereya">
             <h2 class="QalereyaBasliq">Layihələrimiz (Qalereya)</h2>
             <div class="Qalereya">
                 <img src="img/qalereya1.jpg" alt="qalereya1">
@@ -70,5 +77,6 @@
          </section>
     </main>
     <footer></footer>
+    <script src="script.js"></script>
 </body>
 </html>
