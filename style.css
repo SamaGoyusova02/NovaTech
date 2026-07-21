@@ -195,7 +195,8 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    padding: 0 15px; /
+    padding: 0 15px; 
+    margin-bottom: 60px;
 }
 .FromContainer {
     background: #fff;
