@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-  background: #f7f9fb;
+    background: #f7f9fb;
 }
 header {
     color: #000;
@@ -13,6 +13,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 50;
 }
 nav {
     display: flex;
@@ -30,7 +31,7 @@ nav {
     list-style: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.siyahi  a:hover{
+.siyahi a:hover {
     color: #2463eb;
     transition: .3s ease-in-out;
 }
@@ -39,6 +40,126 @@ nav {
     font-size: 24px;
     color: #000;
     cursor: pointer;
+}
+.Hero {
+    background: #edf6ff;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.Hero h1 {
+    font-size: 28px;
+    line-height: 1.3;
+}
+.Hero p {
+    font-size: 14px;
+    max-width: 90%;
+    color: #555;
+}
+.heroButton {
+    background: #2463eb;
+    color: #fff;
+    width: 140px;
+    padding: 12px 0;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+.heroButton:hover {
+    background: black;
+    color: #2463eb;
+    transition: .4s ease-in-out;
+    transform: scale(1.07);
+}
+main {
+    padding-top: 60px;
+}
+.basliq {
+    text-align: center;
+    margin-top: 30px;
+    padding: 0 15px;
+}
+.haqqimizda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 20px;
+}
+.gostericiler {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+.hisse1, .hisse2 {
+    width: 100%;
+    max-width: 100%;
+    text-align: justify;
+}
+.hisse2 {
+    background: #fde2e1;
+    border-left: 4px solid red;
+    padding: 8px;
+    word-break: break-all;
+}
+.hisse1 h3, .hisse2 h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .9em;
+}
+.altbasliq {
+    font-size: .9em;
+    margin-top: 5px;
+}
+.basliqlar {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+.g1 {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+}
+.g1 h2 {
+    color: #2463eb;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 5px;
+}
+.Qalereya {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+}
+.Qalereya img {
+    width: 100%;
+    max-width: 300px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.Qalereya img:hover{
+    transform: scale(1.02);
+    transition: .3s ease-in-out;
+    transform: translateY(-10px)
+}
+.QalereyaBasliq{
+    text-align: center;
+    margin: 40px 0 10px 0;
 }
 @media screen and (min-width: 768px) {
     .menu {
@@ -53,6 +174,28 @@ nav {
         text-decoration: none;
         font-size: 16px;
     }
+    .Hero {
+        height: 550px;
+        min-height: auto;
+        padding: 0 40px;
+    }
+    .Hero h1 {
+        font-size: 38px;
+    }
+    .Hero p {
+        font-size: 16px;
+        max-width: 600px;
+    }
+    .gostericiler {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .g1 {
+        padding: 20px 40px;
+    }
+    .Qalereya {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 @media screen and (min-width: 1024px) {
     .menu {
@@ -64,5 +207,42 @@ nav {
     }
     .siyahi a {
         font-size: 15px;
+    }
+    .Hero {
+        height: 600px;
+    }
+    .Hero h1 {
+        font-size: 40px;
+    }
+    .Hero p {
+        font-size: 18px;
+        max-width: 700px;
+    }
+    .haqqimizda {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        padding-top: 15px;
+    }
+    .gostericiler {
+        flex-direction: row;
+        gap: 20px;
+        width: auto;
+    }
+    .hisse1 {
+        max-width: 400px;
+    }
+    .hisse2 {
+        max-width: 400px;
+    }
+    .basliqlar {
+        max-width: 400px;
+    }
+    .g1 {
+        padding: 20px 40px;
+    }
+    .Qalereya {
+        grid-template-columns: repeat(5, 1fr);
     }
 }
