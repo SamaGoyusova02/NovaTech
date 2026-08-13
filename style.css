@@ -2,13 +2,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-     scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
+
 body {
     background: #f7f9fb;
-   
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-header {
+
+section {
+    scroll-margin-top: 70px;
+}
+
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
     color: #000;
     padding: 15px 0;
     background: #fff;
@@ -16,34 +26,78 @@ header {
     top: 0;
     width: 100%;
     z-index: 50;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
-nav {
+
+.nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.logo {
+
+.nav__logo {
     font-size: 24px;
     font-weight: bold;
     color: #2463eb;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.siyahi {
+
+.nav__list {
     display: none;
     list-style: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.siyahi a:hover {
+
+.nav__link {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav__link:hover {
     color: #2463eb;
-    transition: .3s ease-in-out;
 }
-.menu {
+
+.nav__toggle {
     display: block;
     font-size: 24px;
     color: #000;
     cursor: pointer;
 }
-.Hero {
+.mobile-menu {
+    width: 100vw;
+    position: fixed;
+    background: #2463eb;
+    top: 60px;
+    z-index: 60;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+}
+
+.mobile-menu--open {
+    height: 350px;
+}
+
+.mobile-menu__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-top: 80px;
+    gap: 20px;
+}
+
+.mobile-menu__link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+.main {
+    padding-top: 60px;
+}
+.hero {
     background: #edf6ff;
     min-height: calc(100vh - 60px);
     display: flex;
@@ -53,43 +107,49 @@ nav {
     gap: 20px;
     padding: 40px 20px;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.Hero h1 {
+
+.hero__title {
     font-size: 28px;
     line-height: 1.3;
 }
-.Hero p {
+
+.hero__description {
     font-size: 14px;
     max-width: 90%;
     color: #555;
 }
-.heroButton {
+
+.hero__button {
     background: #2463eb;
     color: #ffffff;
-    width: 140px;
-    padding: 12px 0;
+    padding: 12px 24px;
     outline: none;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.4s ease-in-out;
 }
-.heroButton:hover {
+
+.hero__button:hover {
     background: black;
     color: #2463eb;
-    transition: .4s ease-in-out;
     transform: scale(1.07);
 }
-main {
-    padding-top: 60px;
+
+.about {
+    padding: 30px 15px;
 }
-.basliq {
+
+.about__title {
     text-align: center;
-    margin-top: 30px;
-    padding: 0 15px;
+    margin-bottom: 20px;
 }
-.haqqimizda {
+
+.about__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,255 +157,257 @@ main {
     gap: 30px;
     padding: 15px 20px;
 }
-.gostericiler {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 15px;
-}
-.hisse1, .hisse2 {
-    width: 100%;
-    max-width: 100%;
-    text-align: justify;
-}
-.hisse2 {
-    background: #fde2e1;
-    border-left: 4px solid red;
-    padding: 8px;
-    word-break: break-all;
-}
-.hisse1 h3, .hisse2 h3 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: .9em;
-}
-.altbasliq {
-    font-size: .9em;
-    margin-top: 5px;
-}
-.basliqlar {
+
+.about__info-container {
     display: flex;
     flex-direction: column;
     gap: 14px;
     width: 100%;
 }
-.g1 {
+
+.about__card {
+    width: 100%;
+    text-align: justify;
+}
+
+.about__card--highlight {
+    background: #fde2e1;
+    border-left: 4px solid red;
+    padding: 8px;
+    word-break: break-all;
+}
+
+.about__card-title {
+    font-size: 0.9em;
+}
+
+.about__card-text {
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.about__stats {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.about__stat-card {
     background: #fff;
     padding: 20px;
     text-align: center;
     border-radius: 5px;
     width: 100%;
 }
-.g1 h2 {
+
+.about__stat-number {
     color: #2463eb;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-bottom: 5px;
 }
-.Qalereya {
+
+.about__stat-label {
+    font-size: 14px;
+    color: #555;
+}
+
+.gallery {
+    padding: 20px 15px;
+}
+
+.gallery__title {
+    text-align: center;
+    margin: 40px 0 20px 0;
+}
+
+.gallery__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
     justify-items: center;
-    padding: 20px;
+    padding: 10px;
 }
-.Qalereya img {
+
+.gallery__img {
     width: 100%;
     max-width: 300px;
     height: 320px;
     object-fit: cover;
     border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
 }
-.Qalereya img:hover{
-    transform: scale(1.02);
-    transition: .3s ease-in-out;
-    transform: translateY(-10px)
-}
-.QalereyaBasliq{
-    text-align: center;
-    margin: 40px 0 10px 0;
-}
-#MobilMenubar{
-    width: 100vw;
-    position: fixed;
-    background: #2463eb;
-    top: 60px;
-    z-index: 60;
-    left: 0;
-    height: 0;
-    overflow: hidden;
 
+.gallery__img:hover {
+    transform: translateY(-10px) scale(1.02);
 }
-.mobilSiyahi{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-   padding-top: 120px;
-   gap: 15px;
-}
-.mobilSiyahi a {
-     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-.Form {
+
+.contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    padding: 0 15px; 
+    padding: 0 15px;
     margin-bottom: 60px;
 }
-.FromContainer {
+
+.contact__title {
+    text-align: center;
+}
+
+.contact__form {
     background: #fff;
     width: 100%;
-    max-width: 420px; 
+    max-width: 420px;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 15px;
-    gap: 12px;
+    padding: 30px 20px;
+    gap: 15px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgb(172, 166, 166);
+    box-shadow: 0 0 10px rgba(172, 166, 166, 0.5);
 }
-.FromContainer > div {
+
+.form__group {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
-.FromContainer p {
-    width: 100%;
-    max-width: 380px;
+
+.form__label {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #333;
 }
-input {
+
+.form__input,
+.form__textarea {
     width: 100%;
-    max-width: 380px;
-    height: 42px;
-    padding: 0 0 0 8px;
-    margin-top: 5px;
+    padding: 10px;
     outline: none;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
 }
-textarea {
-    width: 100%;
-    max-width: 380px;
+
+.form__input--error,
+.form__textarea--error {
+    border-color: #e63946;
+}
+
+.form__textarea {
     height: 100px;
-    margin-top: 5px;
-    padding: 5px 0 0 8px;
-    outline: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
     resize: vertical;
 }
-.FormButton {
+
+.form__error {
+    color: #e63946;
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 16px;
+    display: block;
+}
+
+.form__success {
+    display: none;
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.contact__button {
     background: #2463eb;
     width: 100%;
-    max-width: 380px;
     height: 42px;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
+    transition: background 0.3s ease;
 }
-.FormButton:hover {
+
+.contact__button:hover {
     background: #1d4ed8;
 }
-h2{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+
+/* Responsive Styles */
 @media screen and (min-width: 768px) {
-    .menu {
+    .nav__toggle {
         display: none !important;
     }
-    .siyahi {
+
+    .nav__list {
         display: flex !important;
         gap: 25px;
     }
-    .siyahi a {
-        color: #000;
-        text-decoration: none;
-        font-size: 16px;
-    }
-    .Hero {
+
+    .hero {
         height: 550px;
         min-height: auto;
         padding: 0 40px;
     }
-    .Hero h1 {
+
+    .hero__title {
         font-size: 38px;
     }
-    .Hero p {
+
+    .hero__description {
         font-size: 16px;
         max-width: 600px;
     }
-    .gostericiler {
+
+    .about__stats {
         flex-direction: row;
         justify-content: center;
     }
-    .g1 {
-        padding: 20px 40px;
-    }
-    .Qalereya {
+
+    .gallery__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media screen and (min-width: 1024px) {
-    .menu {
-        display: none !important;
-    }
-    .siyahi {
-        display: flex !important;
+    .nav__list {
         gap: 20px;
     }
-    .siyahi a {
-        font-size: 15px;
-    }
-    .Hero {
+
+    .hero {
         height: 600px;
     }
-    .Hero h1 {
+
+    .hero__title {
         font-size: 40px;
     }
-    .Hero p {
+
+    .hero__description {
         font-size: 18px;
         max-width: 700px;
     }
-    .haqqimizda {
+
+    .about__content {
         flex-direction: row;
         justify-content: center;
         align-items: center;
         gap: 60px;
-        padding-top: 15px;
     }
-    .gostericiler {
+
+    .about__info-container {
+        max-width: 400px;
+    }
+
+    .about__stats {
         flex-direction: row;
         gap: 20px;
         width: auto;
     }
-    .hisse1 {
-        max-width: 400px;
-    }
-    .hisse2 {
-        max-width: 400px;
-    }
-    .basliqlar {
-        max-width: 400px;
-    }
-    .g1 {
-        padding: 20px 40px;
-    }
-    .Qalereya {
+
+    .gallery__grid {
         grid-template-columns: repeat(5, 1fr);
     }
 }
